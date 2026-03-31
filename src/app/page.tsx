@@ -106,27 +106,27 @@ export default function HomePage() {
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         >
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0E2619]/80 to-transparent"></div>
         </motion.div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
             <motion.h1 
-              className="text-display text-white mb-6"
+              className="text-display text-[#FAF5EC] mb-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              Authenticated Luxury, <br />Curated for You
+              Authentic <span className="italic">Luxury</span>,<br />Curated for You
             </motion.h1>
             <motion.p 
-              className="text-body text-white/90 text-xl mb-8 max-w-lg"
+              className="text-body text-[#F3E7C5]/90 text-xl mb-8 max-w-lg font-light"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              Handpicked products. Verified authenticity. No compromises.
+              We source authentic luxury products directly from global boutiques — every purchase comes with a real store receipt for complete peace of mind.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -137,7 +137,7 @@ export default function HomePage() {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="btn-primary glow-on-hover px-12 py-5 text-lg"
+                  className="btn-primary glow-on-hover px-12 py-5 text-lg font-cinzel"
                 >
                   Explore Collection
                 </motion.button>
@@ -148,7 +148,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Categories Section */}
-      <section className="py-32 px-6 bg-white overflow-hidden">
+      <section className="py-32 px-6 bg-[#FAF5EC] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <ScrollFadeIn threshold={0.3}>
             <h2 className="text-h2 text-center mb-20">Featured Categories</h2>
@@ -162,7 +162,7 @@ export default function HomePage() {
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.4 }}
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-[#F5F5F5] rounded-lg card-shadow">
+                <div className="relative aspect-[4/5] overflow-hidden bg-[#F3E7C5]/30 rounded-lg card-shadow">
                   <motion.img 
                     src={category.image}
                     alt={category.name}
@@ -172,9 +172,9 @@ export default function HomePage() {
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-2xl font-playfair font-bold text-white mb-2">{category.name}</h3>
+                    <h3 className="text-2xl font-cormorant font-light text-[#FAF5EC] mb-2">{category.name}</h3>
                     <motion.span 
-                      className="inline-block text-[#D4AF37] font-semibold tracking-widest text-sm uppercase border-b-2 border-transparent hover:border-[#D4AF37] transition-all"
+                      className="inline-block text-[#E4C97E] font-jost font-normal tracking-[0.2em] text-sm uppercase border-b-2 border-transparent hover:border-[#E4C97E] transition-all"
                     >
                       Explore Collection →
                     </motion.span>
@@ -187,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* Curated Picks Section */}
-      <section className="py-32 px-6 bg-[#F9F9F9]">
+      <section className="py-32 px-6 bg-[#F3E7C5]/20">
         <div className="max-w-7xl mx-auto">
           <ScrollFadeIn>
             <h2 className="text-h2 text-center mb-20 text-balance">Curated Picks</h2>
@@ -202,33 +202,33 @@ export default function HomePage() {
       </section>
 
       {/* Trust/Authentication Section */}
-      <section className="py-32 px-6 bg-white overflow-hidden">
+      <section className="py-32 px-6 bg-[#FAF5EC] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
             {/* Verified Authenticity */}
             <ScrollFadeIn direction="up">
-              <div className="text-6xl mb-8 text-[#D4AF37]">✓</div>
-              <h3 className="text-h3 mb-6">Verified Authenticity</h3>
-              <p className="text-body text-[#4A4A4A] leading-relaxed">
-                Every item is authenticated by our team of experts before reaching you.
+              <div className="text-5xl mb-8 text-[#C9A84C] font-cinzel">✓</div>
+              <h3 className="text-h3 mb-6 text-[#0E2619]">Verified Authenticity</h3>
+              <p className="text-body text-[#1A3D2B]/80 leading-relaxed font-light">
+                Every product is sourced directly from brand boutiques worldwide. Real receipts, real provenance — no grey market, no compromise.
               </p>
             </ScrollFadeIn>
 
             {/* Premium Selection */}
             <ScrollFadeIn direction="up" delay={0.2}>
-              <div className="text-6xl mb-8 text-[#D4AF37]">★</div>
-              <h3 className="text-h3 mb-6">Premium Selection</h3>
-              <p className="text-body text-[#4A4A4A] leading-relaxed">
-                Handpicked luxury pieces from the most sought-after designers.
+              <div className="text-5xl mb-8 text-[#C9A84C] font-cinzel">★</div>
+              <h3 className="text-h3 mb-6 text-[#0E2619]">Premium Selection</h3>
+              <p className="text-body text-[#1A3D2B]/80 leading-relaxed font-light">
+                Handpicked luxury pieces from the most sought-after designers. Only pieces that align with enduring luxury standards.
               </p>
             </ScrollFadeIn>
 
             {/* Expert Curation */}
             <ScrollFadeIn direction="up" delay={0.4}>
-              <div className="text-6xl mb-8 text-[#D4AF37]">◆</div>
-              <h3 className="text-h3 mb-6">Expert Curation</h3>
-              <p className="text-body text-[#4A4A4A] leading-relaxed">
-                Each piece is selected for its quality, craftsmanship, and timeless appeal.
+              <div className="text-5xl mb-8 text-[#C9A84C] font-cinzel">◆</div>
+              <h3 className="text-h3 mb-6 text-[#0E2619]">Expert Curation</h3>
+              <p className="text-body text-[#1A3D2B]/80 leading-relaxed font-light">
+                Each piece is selected for its quality, craftsmanship, and timeless appeal. The concierge instinct curates with taste.
               </p>
             </ScrollFadeIn>
           </div>
@@ -236,16 +236,16 @@ export default function HomePage() {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-32 text-center">
             <ScrollFadeIn direction="up">
-              <p className="text-7xl font-playfair font-bold text-[#D4AF37] mb-4">
+              <p className="text-7xl font-cormorant font-light text-[#C9A84C] mb-4">
                 <CountUp value={500} suffix="+" />
               </p>
-              <p className="text-label text-[#2A2A2A] tracking-widest uppercase">Products Verified</p>
+              <p className="text-label text-[#1A3D2B] tracking-[0.35em] uppercase">Products Verified</p>
             </ScrollFadeIn>
             <ScrollFadeIn direction="up" delay={0.2}>
-              <p className="text-7xl font-playfair font-bold text-[#D4AF37] mb-4">
+              <p className="text-7xl font-cormorant font-light text-[#C9A84C] mb-4">
                 <CountUp value={10} suffix="K+" />
               </p>
-              <p className="text-label text-[#2A2A2A] tracking-widest uppercase">Happy Collectors</p>
+              <p className="text-label text-[#1A3D2B] tracking-[0.35em] uppercase">Happy Collectors</p>
             </ScrollFadeIn>
           </div>
         </div>

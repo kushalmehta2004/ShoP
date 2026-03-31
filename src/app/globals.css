@@ -1,27 +1,42 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Neutrals */
-  --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F5F5F5;
-  --color-text-primary: #0A0A0A;
-  --color-text-secondary: #2A2A2A;
-  --color-accent-gold: #D4AF37;
+  /* ShoP. Luxury Brand Color Palette */
+  --color-deep-forest: #0E2619;
+  --color-forest-green: #1A3D2B;
+  --color-burnished-gold: #C9A84C;
+  --color-champagne-gold: #E4C97E;
+  --color-gold-pale: #F3E7C5;
+  --color-warm-cream: #FAF5EC;
+  --color-charcoal: #1C1C1C;
+  --color-warm-white: #FDFAF4;
+  
+  /* Legacy aliases for compatibility */
+  --color-bg-primary: var(--color-warm-white);
+  --color-bg-secondary: var(--color-warm-cream);
+  --color-text-primary: var(--color-charcoal);
+  --color-text-secondary: var(--color-forest-green);
+  --color-accent-gold: var(--color-burnished-gold);
   --color-accent-silver: #C0C0C0;
-  --color-border: #EBEBEB;
-  --color-hover: #F0F0F0;
+  --color-border: rgba(201, 168, 76, 0.2);
+  --color-hover: var(--color-gold-pale);
   
   /* Fonts will be loaded from layout */
-  --font-playfair: 'Playfair Display', serif;
-  --font-montserrat: 'Montserrat', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-jost: 'Jost', sans-serif;
+  
+  /* Legacy font aliases */
+  --font-playfair: var(--font-cormorant);
+  --font-montserrat: var(--font-jost);
   
   /* Luxury Color Palette */
-  --color-luxe-white: #FFFFFF;
-  --color-luxe-offwhite: #F5F5F5;
-  --color-luxe-lightgray: #EBEBEB;
-  --color-luxe-darkgray: #2A2A2A;
-  --color-luxe-black: #0A0A0A;
-  --color-luxe-gold: #D4AF37;
+  --color-luxe-white: var(--color-warm-white);
+  --color-luxe-offwhite: var(--color-warm-cream);
+  --color-luxe-lightgray: var(--color-gold-pale);
+  --color-luxe-darkgray: var(--color-forest-green);
+  --color-luxe-black: var(--color-charcoal);
+  --color-luxe-gold: var(--color-burnished-gold);
   --color-luxe-silver: #C0C0C0;
 }
 
@@ -38,93 +53,108 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography Classes */
+/* Typography Classes - ShoP. Design System */
+
+/* Display — Cormorant Garamond · Primary Headline */
 .text-display {
-  font-family: var(--font-playfair);
+  font-family: var(--font-cormorant);
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
-.text-h2 {
-  font-family: var(--font-playfair);
-  font-size: 42px;
-  font-weight: 600;
+.text-display-italic {
+  font-family: var(--font-cormorant);
+  font-size: 56px;
+  font-weight: 300;
+  font-style: italic;
   letter-spacing: -0.02em;
   line-height: 1.1;
+}
+
+/* Structural — Cinzel · Subheadings & Labels */
+.text-h2 {
+  font-family: var(--font-cinzel);
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
 .text-h3 {
-  font-family: var(--font-playfair);
+  font-family: var(--font-cinzel);
   font-size: 28px;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.text-body {
-  font-family: var(--font-montserrat);
-  font-size: 16px;
   font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Body — Jost · Body & Supporting Copy */
+.text-body {
+  font-family: var(--font-jost);
+  font-size: 16px;
+  font-weight: 300;
   letter-spacing: 0.01em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
+/* Caption — Jost · Micro Labels & Tags */
 .text-label {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-jost);
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
 }
 
-/* Button Styles */
+/* Button Styles - ShoP. Design System */
 .btn-primary {
-  background-color: var(--color-luxe-gold);
-  color: var(--color-luxe-black);
-  font-family: var(--font-montserrat);
+  background-color: var(--color-burnished-gold);
+  color: var(--color-deep-forest);
+  font-family: var(--font-cinzel);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 12px 24px;
-  height: 44px;
+  padding: 14px 28px;
+  height: 48px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-primary:hover {
-  background-color: #BFA030;
+  background-color: var(--color-champagne-gold);
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
 }
 
 .btn-primary:focus {
-  outline: 2px solid var(--color-luxe-gold);
+  outline: 2px solid var(--color-burnished-gold);
   outline-offset: 2px;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--color-luxe-black);
-  font-family: var(--font-montserrat);
+  color: var(--color-deep-forest);
+  font-family: var(--font-cinzel);
   font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 12px 24px;
-  height: 44px;
-  border: 1px solid var(--color-luxe-gold);
+  padding: 14px 28px;
+  height: 48px;
+  border: 1px solid var(--color-burnished-gold);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-luxe-gold);
-  color: var(--color-luxe-black);
+  background-color: var(--color-burnished-gold);
+  color: var(--color-deep-forest);
 }
 
 .btn-secondary:focus {
-  outline: 2px solid var(--color-luxe-gold);
+  outline: 2px solid var(--color-burnished-gold);
   outline-offset: 2px;
 }
 
@@ -140,10 +170,10 @@ body {
 /* Link Button with Underline Animation */
 .link-button {
   position: relative;
-  font-family: var(--font-montserrat);
+  font-family: var(--font-jost);
   font-size: 14px;
-  font-weight: 600;
-  color: var(--color-luxe-black);
+  font-weight: 400;
+  color: var(--color-charcoal);
   text-decoration: none;
 }
 
@@ -154,8 +184,8 @@ body {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: var(--color-luxe-gold);
-  transition: width 0.3s ease;
+  background-color: var(--color-burnished-gold);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .link-button:hover::after {
@@ -165,7 +195,7 @@ body {
 /* Focus States */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--color-luxe-gold);
+  outline: 2px solid var(--color-burnished-gold);
   outline-offset: 2px;
 }
 
@@ -244,7 +274,7 @@ a:focus-visible {
 
 @keyframes shimmer {
   0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+  50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 15px rgba(201, 168, 76, 0.4); }
   100% { transform: scale(1); opacity: 0.8; }
 }
 
@@ -328,8 +358,8 @@ a:focus-visible {
   }
 
   .glow-on-hover:hover {
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
-    background-color: #BFA030;
+    box-shadow: 0 0 25px rgba(201, 168, 76, 0.3);
+    background-color: var(--color-champagne-gold);
   }
 
   /* Hide scrollbar but keep functionality */

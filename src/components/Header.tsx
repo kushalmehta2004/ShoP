@@ -40,7 +40,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 h-16 bg-white border-b border-[#EBEBEB] z-50">
+      <header className="fixed top-0 left-0 right-0 h-16 bg-[#FDFAF4] border-b border-[#C9A84C]/20 z-50">
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
           <motion.div
@@ -48,8 +48,8 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Link href="/" className="text-2xl font-playfair font-bold text-[#0A0A0A]">
-              ShopendswithP
+            <Link href="/" className="text-2xl font-cinzel font-medium text-[#0E2619] tracking-wider">
+              ShoP.
             </Link>
           </motion.div>
 
@@ -65,10 +65,10 @@ export default function Header() {
               >
                 <Link 
                   href={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
-                  className="text-sm font-montserrat font-medium text-[#0A0A0A] hover:text-[#D4AF37] relative group transition-colors"
+                  className="text-sm font-jost font-normal text-[#1C1C1C] hover:text-[#C9A84C] relative group transition-colors tracking-wide"
                 >
                   {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D4AF37] transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#C9A84C] transition-all duration-300 group-hover:w-full" />
                 </Link>
               </motion.div>
             ))}
@@ -94,13 +94,13 @@ export default function Header() {
                   className="relative p-2 hover:bg-gray-50 rounded-full transition-colors block"
                 >
                   <motion.div whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.9 }}>
-                    <item.icon className="w-5 h-5 text-[#0A0A0A]" />
+                    <item.icon className="w-5 h-5 text-[#0E2619]" />
                   </motion.div>
                   {item.count !== undefined && item.count > 0 && (
                     <motion.span 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="absolute -top-1 -right-1 bg-[#D4AF37] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold"
+                      className="absolute -top-1 -right-1 bg-[#C9A84C] text-[#0E2619] text-xs w-5 h-5 rounded-full flex items-center justify-center font-medium font-jost"
                     >
                       {item.count}
                     </motion.span>
@@ -117,9 +117,9 @@ export default function Header() {
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5 text-[#0A0A0A]" />
+                <X className="w-5 h-5 text-[#0E2619]" />
               ) : (
-                <Menu className="w-5 h-5 text-[#0A0A0A]" />
+                <Menu className="w-5 h-5 text-[#0E2619]" />
               )}
             </motion.button>
           </div>
@@ -145,14 +145,14 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute left-0 top-0 bottom-0 w-72 bg-white shadow-2xl"
+              className="absolute left-0 top-0 bottom-0 w-72 bg-[#FDFAF4] shadow-2xl"
             >
               <div className="p-8">
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mb-12 p-2 hover:bg-gray-50 rounded-full transition-colors"
                 >
-                  <X className="w-6 h-6 text-[#0A0A0A]" />
+                  <X className="w-6 h-6 text-[#0E2619]" />
                 </button>
 
                 <nav className="flex flex-col gap-8">
@@ -172,7 +172,7 @@ export default function Header() {
                     >
                       <Link 
                         href={item.href} 
-                        className="text-xl font-montserrat font-semibold text-[#0A0A0A] hover:text-[#D4AF37] transition-colors"
+                        className="text-xl font-jost font-normal text-[#1C1C1C] hover:text-[#C9A84C] transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}

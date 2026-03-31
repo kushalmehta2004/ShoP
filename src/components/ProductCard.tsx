@@ -64,7 +64,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/5] bg-[#F9F9F9] overflow-hidden rounded-xl card-shadow">
+      <div className="relative aspect-[4/5] bg-[#F3E7C5]/20 overflow-hidden rounded-xl card-shadow">
         <motion.img 
           src={imgSrc} 
           alt={product.name} 
@@ -74,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         />
         {product.authenticated && (
-          <div className="absolute top-4 right-4 bg-black bg-opacity-70 text-[#D4AF37] px-3 py-1 text-xs font-semibold rounded-sm border border-[#D4AF37]/30">
+          <div className="absolute top-4 right-4 bg-[#0E2619]/80 text-[#E4C97E] px-3 py-1 text-xs font-jost font-normal tracking-wider rounded-sm border border-[#C9A84C]/30">
             Verified ✓
           </div>
         )}
@@ -85,19 +85,19 @@ export default function ProductCard({ product }: ProductCardProps) {
           whileTap={{ scale: 0.9 }}
           className={`absolute top-4 left-4 p-2 rounded-full transition-colors ${
             isInWishlist(product.id) 
-              ? 'bg-white text-red-500' 
-              : 'bg-white/80 text-gray-600 hover:bg-white'
+              ? 'bg-[#FAF5EC] text-[#C9A84C]' 
+              : 'bg-[#FAF5EC]/80 text-[#1A3D2B] hover:bg-[#FAF5EC]'
           }`}
         >
-          <Heart className={`w-5 h-5 ${isInWishlist(product.id) ? 'fill-red-500' : ''}`} />
+          <Heart className={`w-5 h-5 ${isInWishlist(product.id) ? 'fill-[#C9A84C]' : ''}`} />
         </motion.button>
       </div>
 
       {/* Product Info */}
       <div className="pt-4">
-        <h3 className="text-label text-[#2A2A2A] mb-1">{product.brand}</h3>
-        <h4 className="text-h3 text-[#0A0A0A] mb-2 line-clamp-2 hover-underline inline-block cursor-pointer">{product.name}</h4>
-        <p className="text-body text-[#D4AF37] font-semibold mb-4">${product.price.toFixed(2)}</p>
+        <h3 className="text-label text-[#1A3D2B] mb-1 tracking-[0.35em]">{product.brand}</h3>
+        <h4 className="font-cormorant text-xl font-light text-[#0E2619] mb-2 line-clamp-2 hover-underline inline-block cursor-pointer">{product.name}</h4>
+        <p className="text-body text-[#C9A84C] font-jost font-normal mb-4">${product.price.toFixed(2)}</p>
         
         <div className="flex items-center justify-between">
           <motion.button 
@@ -113,9 +113,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             aria-label="Add to wishlist"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 border border-[#EBEBEB] hover:border-[#D4AF37] transition-colors"
+            className="p-3 border border-[#C9A84C]/20 hover:border-[#C9A84C] transition-colors"
           >
-            <Heart className={`w-5 h-5 ${isInWishlist(product.id) ? 'text-red-500 fill-red-500' : 'text-[#0A0A0A]'}`} />
+            <Heart className={`w-5 h-5 ${isInWishlist(product.id) ? 'text-[#C9A84C] fill-[#C9A84C]' : 'text-[#0E2619]'}`} />
           </motion.button>
         </div>
       </div>
