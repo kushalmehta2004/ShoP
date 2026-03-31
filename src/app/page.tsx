@@ -80,8 +80,14 @@ function CountUp({ value, suffix = '', duration = 2 }: { value: number; suffix?:
 
 export default function HomePage() {
   const { scrollYProgress } = useScroll();
-  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, 150]);
-  const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.1]);
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+  
+  const heroY = useTransform(smoothProgress, [0, 0.3], [0, 150]);
+  const heroScale = useTransform(smoothProgress, [0, 0.3], [1, 1.1]);
 
   return (
     <div className="w-full">

@@ -27,7 +27,7 @@
 
 /* Global Styles */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
 }
 
 body {
@@ -330,11 +330,6 @@ a:focus-visible {
   .glow-on-hover:hover {
     box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
     background-color: #BFA030;
-  }
-
-  /* Smooth scroll support for custom containers */
-  .smooth-scroll {
-    scroll-behavior: smooth;
   }
 
   /* Hide scrollbar but keep functionality */

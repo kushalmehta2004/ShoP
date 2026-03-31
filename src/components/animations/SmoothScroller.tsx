@@ -5,27 +5,33 @@ import Lenis from '@studio-freight/lenis';
 
 export default function SmoothScroller() {
   useEffect(() => {
+    // Check for reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     // Initialize Lenis
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.0,          // Default is 1.2, reducing slightly for more "snappy" feel
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wrapper: window,
-      content: document.documentElement,
-      lerp: 0.1,
+      lerp: 0.15,             // Faster response
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
       smoothWheel: true,
-      syncTouch: true,
     });
 
     // raf loop
+    let requestFrame: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      requestFrame = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    requestFrame = requestAnimationFrame(raf);
 
     // Cleanup
     return () => {
+      cancelAnimationFrame(requestFrame);
       lenis.destroy();
     };
   }, []);
